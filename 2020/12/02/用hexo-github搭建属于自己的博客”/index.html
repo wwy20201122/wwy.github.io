@@ -15,7 +15,7 @@
 <meta property="og:description" content="对于一个新手来说，用hexo+github成功搭出属于自己的博客真的是一件很有成就感的事。为此，真的要写一篇博客来纪念一下。 相关步骤：1，安装Node.js并配置Node.js环境成功的标志是 打开cmd命令行先输入node -v再输入npm -v两次执行均会出现版本号2.安装Git和配置Git环境安装成功的标志是在电脑桌面任何位置鼠标右键能够出现如下两个选择。Git GUI HereGit B">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-02T04:16:19.000Z">
-<meta property="article:modified_time" content="2020-12-02T10:20:17.096Z">
+<meta property="article:modified_time" content="2020-12-02T10:27:54.263Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -90,8 +90,8 @@
       
         <p>对于一个新手来说，用hexo+github成功搭出属于自己的博客真的是一件很有成就感的事。<br>为此，真的要写一篇博客来纪念一下。</p>
 <p>相关步骤：<br><strong>1，安装Node.js并配置Node.js环境</strong><br>成功的标志是 打开cmd命令行<br>先输入node -v<br>再输入npm -v<br>两次执行均会出现版本号<br><strong>2.安装Git和配置Git环境</strong><br>安装成功的标志是在电脑桌面任何位置鼠标右键能够出现如下两个选择。<br>Git GUI Here<br>Git Bash Here<br><strong>3.Github账户注册和建立新仓库</strong><br>要注意的是：<br>   第一个是：仓库名必须要遵守”账户名.github.io”的格式，不然接下来会有很多麻烦。<br> （这一个真的很重要，我当时就没太在意这一条，最后搭建完后发现很多地方都不太对，<br>    最后又重新改仓库名 ，重新搭建了一遍）<br>    第二个是：并且在创建新仓库的时候要勾选Initialize this repository with a README,建立好后,进入你的账户，在建好的仓库中有个setting,点击它，向下拉到Github Pages处，会看到已经生成了属于你自己的网址，复制下来在浏览器上访它，就会发现它已经被部署到网络上了。<br><strong>4.安装Hexo</strong><br>    第一步：在自己认为合适的地方创建一个文件夹。我是在F盘创建了一个blog文件夹<br>    第二步：通过命令行进入到该文件夹里面。具体操作是：<br>    输入 F:<br>    输入 cd blog<br>    这样 就进入了<br>    第三步：输入npm install hexo -g,开始安装hexo.<br>    第四步：输入hexo -v，检查hexo是否安装成功。<br>    第五步：输入hexo init,初始化该文件夹（会有一点漫长）。<br>       出现“Start blogging with Hexo!”表示初始化完成。<br>    第六步：输入npm install,安装所需要的组件。<br>    第七步：输入hexo g,首次体验hexo.<br>    第八步：输入hexo s,开启服务器，访问生成的网址。<br>       假如页面一直无法跳转，那么可能端口被占用了。此时可以用ctrl+c操作停止服务器，<br>       接着输入”hexo server -p 5000“来改变端口号。这样就成功了。</p>
-<p><strong>5.将Hexo与GitHub page联系起来</strong><br>    第一步：设置Git的user name和user email。具体操作为：找到上述建的blog文件夹，在其文件夹上鼠标右键，点击Git Base Here，<br>先输入git config –global user.name “用户名”<br>再输入git config –global user.email “自己的邮箱“<br>    第二步：输入cd ~/.ssh,检查是否有.ssh文件夹，如果显示也没有关系。<br>    第三步：输入ssh-keygen -t rsa -C “自己邮箱”，连续三个回车，生成密钥，最后得到两个文件<br>    ：id_rsa和id_rsa.pub(默认存储路径为：C:\用户\dd.ssh).<br>    第四步：输入eval “$(ssh-agent -s)”,<br>    第五步：输入ssh-add ~/.ssh/id_rsa,添加生成的SSHkey到ssh-agent。<br>    第六步：登录Github，点击头像下的settings，选择SSH and GPG keys，新建一个new ssh key,<br>    具体操作是将id_rsa.pub文件里的内容用记事本打开复制到key里，至于title随便填，最后点击添加就行了<br>    第六步：在git base here中输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>,检查ssh是否添加成功，添加成功的标志是hi后面是你的用户名。</p>
-<p><strong>6.配置Deployment</strong><br>  在blog中找到_config.yml文件，修改repo的值(在最下面）。<br>具体操作为：<br>deploy:<br>  type: git<br>  repository: git@……( repo的值是GitHub中code选项下的ssh)<br>  branch: main<br>完成了以上这些步骤就完成了搭建。</p>
+<p><strong>5.将Hexo与GitHub page联系起来</strong><br>    第一步：设置Git的user name和user email。具体操作为：找到上述建的blog文件夹，在其文件夹上鼠标右键，点击Git Base Here，<br>先输入git config –global user.name “用户名”<br>再输入git config –global user.email “自己的邮箱“<br>    第二步：输入cd ~/.ssh,检查是否有.ssh文件夹，如果显示也没有关系。<br>    第三步：输入ssh-keygen -t rsa -C “自己邮箱”，连续三个回车，生成密钥，最后得到两个文件<br>    ：id_rsa和id_rsa.pub(默认存储路径为：C:\用户\dd.ssh).<br>    第四步：输入eval “$(ssh-agent -s)”,<br>    第五步：输入ssh-add ~/.ssh/id_rsa,添加生成的SSHkey到ssh-agent。<br>    第六步：登录Github，点击头像下的settings，选择SSH and GPG keys，新建一个new ssh key,<br>    具体操作是将id_rsa.pub文件里的内容用记事本打开复制到key里，至于title随便填，最后点击添加就行了<br>    第六步：在git base here中输入ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>,检查ssh是否添加成功，添加成功的标志是hi后面是你的用户名。</p>
+<p><strong>6.配置Deployment</strong><br>  在blog中找到_config.yml文件，修改repo的值(在最下面）。<br>具体操作为：<br>deploy:<br>   type: git<br>   repository: git@……( repo的值是GitHub中code选项下的ssh)<br>   branch: main<br>完成了以上这些步骤就完成了搭建。</p>
 
       
     </div>
